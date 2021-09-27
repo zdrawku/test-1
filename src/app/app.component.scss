@@ -1,0 +1,32 @@
+:host {
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+}
+.grid {
+  height: 784px;
+  min-width: 50px;
+  min-height: 50px;
+  flex: 1 0 auto;
+}
+.snackbar {
+  min-width: min-content;
+  bottom: 16px;
+  left: 16px;
+  position: fixed;
+  height: max-content;
+  z-index: 1;
+}
+.dialog-window {
+  min-width: 0;
+  min-height: 0;
+}
+.button {
+  height: max-content;
+  min-width: min-content;
+}
+.text {
+  height: max-content;
+  min-width: min-content;
+  white-space: pre-wrap;
+}

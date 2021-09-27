@@ -1,0 +1,35 @@
+<igx-grid [data]="northwindCategories" [rowEditable]="true" cellSelection="multiple" columnSelection="multiple" [allowFiltering]="true" filterMode="excelStyleFilter" [allowAdvancedFiltering]="true" [autoGenerate]="false" height="784px" displayDensity="cosy" primaryKey="categoryID" class="grid">
+  <igx-column field="categoryID" header="categoryID" title="categoryID" dataType="number" [sortable]="true" [movable]="true" [resizable]="true" [hasSummary]="true" [groupable]="true" [editable]="true"></igx-column>
+  <igx-column field="description" header="description" title="description" dataType="string" [sortable]="true" [movable]="true" [resizable]="true" [hasSummary]="true" [groupable]="true" [editable]="true"></igx-column>
+  <igx-column field="name" header="name" title="name" dataType="string" [sortable]="true" [movable]="true" [resizable]="true" [hasSummary]="true" [groupable]="true" [editable]="true"></igx-column>
+  <igx-action-strip>
+    <igx-grid-pinning-actions></igx-grid-pinning-actions>
+    <igx-grid-editing-actions [addRow]="true"></igx-grid-editing-actions>
+  </igx-action-strip>
+  <igx-paginator [perPage]="10"></igx-paginator>
+  <igx-grid-toolbar>
+    <igx-grid-toolbar-title>Grid Toolbar</igx-grid-toolbar-title>
+    <igx-grid-toolbar-actions>
+      <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+      <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+      <igx-grid-toolbar-advanced-filtering></igx-grid-toolbar-advanced-filtering>
+    </igx-grid-toolbar-actions>
+  </igx-grid-toolbar>
+</igx-grid>
+<igx-dialog [closeOnOutsideSelect]="true" [closeOnEscape]="true" class="dialog-window">
+  <igx-dialog-title>Confirmation</igx-dialog-title>
+  <div igxDialogActions>
+    <button igxButton="flat" [disabled]="false" class="button">
+      <span>Button</span>
+    </button>
+  </div>
+  <div>
+    <p class="text"></p>
+  </div>
+</igx-dialog>
+<igx-snackbar actionText="Action" [autoHide]="false" [displayTime]="4000" (clicked)="snackbar.toggle()" #snackbar class="snackbar">
+  This is a message
+</igx-snackbar>
+<igx-dialog message="Are you sure you want to do this?" leftButtonLabel="Cancel" rightButtonLabel="OK" [closeOnOutsideSelect]="true" [closeOnEscape]="true" (leftButtonSelect)="dialogWindow.toggle()" (rightButtonSelect)="dialogWindow.toggle()" #dialogWindow class="dialog-window">
+  <igx-dialog-title>Confirmation</igx-dialog-title>
+</igx-dialog>
